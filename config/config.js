@@ -317,6 +317,25 @@ export default defineConfig({
             {
               component: '404',
             },
+
+            // 产品信息页
+            {
+              path: '/Product',
+              name: 'Product',
+              icon: 'smile',
+              routes: [
+                {
+                  path: '/',
+                  redirect: '/Product/ProductFiles'
+                },
+                {
+                  name: 'ProductFiles',
+                  icon: 'smile',
+                  path: '/Product/ProductFiles',
+                  component: './Product/ProductFiles'
+                },
+              ],
+            },
           ],
         },
       ],
