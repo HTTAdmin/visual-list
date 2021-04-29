@@ -1,11 +1,8 @@
-import { Tooltip, Tag } from 'antd';
-import { QuestionCircleOutlined } from '@ant-design/icons';
+import { Tag } from 'antd';
 import React from 'react';
 import { connect, SelectLang } from 'umi';
 import Avatar from './AvatarDropdown';
-import HeaderSearch from '../HeaderSearch';
 import styles from './index.less';
-import NoticeIconView from './NoticeIconView';
 
 const ENVTagColor = {
   dev: 'orange',
@@ -23,7 +20,7 @@ const GlobalHeaderRight = (props) => {
 
   return (
     <div className={className}>
-      <HeaderSearch
+      {/* <HeaderSearch
         className={`${styles.action} ${styles.search}`}
         placeholder="站内搜索"
         defaultValue="umi ui"
@@ -47,8 +44,8 @@ const GlobalHeaderRight = (props) => {
         ]} // onSearch={value => {
         //   //console.log('input', value);
         // }}
-      />
-      <Tooltip title="使用文档">
+      /> */}
+      {/* <Tooltip title="使用文档">
         <a
           style={{
             color: 'inherit',
@@ -60,8 +57,8 @@ const GlobalHeaderRight = (props) => {
         >
           <QuestionCircleOutlined />
         </a>
-      </Tooltip>
-      <NoticeIconView />
+      </Tooltip> */}
+      {/* <NoticeIconView /> */}
       <Avatar menu />
       {REACT_APP_ENV && (
         <span>

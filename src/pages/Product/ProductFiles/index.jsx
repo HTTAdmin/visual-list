@@ -1,8 +1,29 @@
-import { Button, Result } from 'antd';
+import GGEditor from 'gg-editor';
+import { PageContainer } from '@ant-design/pro-layout';
 import React from 'react';
-import { history } from 'umi';
-import styles from './index.less'
+// import { formatMessage } from 'umi';
+import IntroduceRow from './components/IntroduceRow';
+import { GridContent } from '@ant-design/pro-layout';
+import { connect } from 'umi';
 
-export default() => {
-    return <div> New Page</div>
-}
+GGEditor.setTrackable(false);
+const ProductFiles = ({ loading, dashboardAndanalysis }) => {
+  const { visitData } = dashboardAndanalysis;
+  return (
+    <PageContainer
+    // content={formatMessage({
+    //   id: '',
+    //   defaultMessage: '',
+    // })}
+    >
+      <GridContent>
+        <IntroduceRow loading={loading} visitData={visitData} />
+      </GridContent>
+    </PageContainer>
+  );
+};
+
+export default connect(({ dashboardAndanalysis, loading }) => ({
+  dashboardAndanalysis,
+  loading: loading.effects['dashboardAndanalysis/fetch'],
+}))(ProductFiles);

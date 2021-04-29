@@ -314,27 +314,27 @@ export default defineConfig({
                 },
               ],
             },
-            {
-              component: '404',
-            },
-
             // 产品信息页
             {
-              path: '/Product',
-              name: 'Product',
+              path: '/product',
+              name: 'product',
               icon: 'smile',
               routes: [
                 {
                   path: '/',
-                  redirect: '/Product/ProductFiles'
+                  redirect: '/product/productfiles',
                 },
                 {
-                  name: 'ProductFiles',
+                  name: 'productfiles',
                   icon: 'smile',
-                  path: '/Product/ProductFiles',
-                  component: './Product/ProductFiles'
+                  path: '/product/productfiles',
+                  component: './product/productfiles',
                 },
               ],
+            },
+
+            {
+              component: '404',
             },
           ],
         },

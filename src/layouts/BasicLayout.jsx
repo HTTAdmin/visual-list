@@ -3,28 +3,13 @@
  *
  * @see You can view component api by: https://github.com/ant-design/ant-design-pro-layout
  */
-import ProLayout, { DefaultFooter, SettingDrawer } from '@ant-design/pro-layout';
-import React, { useEffect, useMemo, useRef } from 'react';
+import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
+import React, { useEffect, useRef } from 'react';
 import { Link, useIntl, connect, history } from 'umi';
 import { GithubOutlined } from '@ant-design/icons';
-import { Result, Button } from 'antd';
 import Authorized from '@/utils/Authorized';
 import RightContent from '@/components/GlobalHeader/RightContent';
-import { getMatchMenu } from '@umijs/route-utils';
 import logo from '../assets/logo.svg';
-
-const noMatch = (
-  <Result
-    status={403}
-    title="403"
-    subTitle="Sorry, you are not authorized to access this page."
-    extra={
-      <Button type="primary">
-        <Link to="/user/login">Go Login</Link>
-      </Button>
-    }
-  />
-);
 
 /** Use Authorized check all menu item */
 const menuDataRender = (menuList) =>
@@ -65,7 +50,6 @@ const defaultFooterDom = (
 const BasicLayout = (props) => {
   const {
     dispatch,
-    children,
     settings,
     location = {
       pathname: '/',
@@ -90,13 +74,6 @@ const BasicLayout = (props) => {
     }
   }; // get children authority
 
-  const authorized = useMemo(
-    () =>
-      getMatchMenu(location.pathname || '/', menuDataRef.current).pop() || {
-        authority: undefined,
-      },
-    [location.pathname],
-  );
   const { formatMessage } = useIntl();
   return (
     <>
@@ -149,11 +126,11 @@ const BasicLayout = (props) => {
           return menuData || [];
         }}
       >
-        <Authorized authority={authorized.authority} noMatch={noMatch}>
+        {/* <Authorized authority={authorized.authority} noMatch={noMatch}>
           {children}
-        </Authorized>
+        </Authorized> */}
       </ProLayout>
-      <SettingDrawer
+      {/* <SettingDrawer
         settings={settings}
         onSettingChange={(config) =>
           dispatch({
@@ -161,7 +138,7 @@ const BasicLayout = (props) => {
             payload: config,
           })
         }
-      />
+      /> */}
     </>
   );
 };
