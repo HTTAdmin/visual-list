@@ -1,4 +1,4 @@
-import { DefaultFooter, getMenuData, getPageTitle } from '@ant-design/pro-layout';
+import { getMenuData, getPageTitle } from '@ant-design/pro-layout';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link, SelectLang, useIntl, connect, FormattedMessage } from 'umi';
 import React from 'react';
@@ -46,15 +46,12 @@ const UserLayout = (props) => {
               </Link>
             </div>
             <div className={styles.desc}>
-              <FormattedMessage
-                id="pages.layouts.userLayout.title"
-                defaultMessage="Ant Design 是西湖区最具影响力的 Web 设计规范"
-              />
+              <FormattedMessage id="pages.layouts.userLayout.title" defaultMessage="后台系统管理" />
             </div>
           </div>
           {children}
         </div>
-        <DefaultFooter />
+        {/* <DefaultFooter /> */}
       </div>
     </HelmetProvider>
   );
