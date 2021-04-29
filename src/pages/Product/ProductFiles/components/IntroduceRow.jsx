@@ -136,6 +136,9 @@ const IntroduceRow = ({ loading }) => (
             <p>
               <a>基金评级：</a>暂无评级
             </p>
+            <p>
+              交易状态： <a>赎回</a>
+            </p>
           </div>
         }
         contentHeight={46}

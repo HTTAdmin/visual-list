@@ -120,7 +120,7 @@ const offlineData = [];
 
 for (let i = 0; i < 10; i += 1) {
   offlineData.push({
-    name: `Stores ${i}`,
+    name: `嘉实新兴产业股票 ${i}`,
     cvr: Math.ceil(Math.random() * 9) / 10,
   });
 }
